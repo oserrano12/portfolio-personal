@@ -120,13 +120,13 @@ void main() {
   uv -= uDrag * touch;
 
   float t = uTime;
-  uv = rotate(0.06 * uFlow * sin(t * 0.17)) * uv;
-  uv += 0.05 * uFlow * vec2(sin(t * 0.21), cos(t * 0.13));
+  uv = rotate(0.08 * uFlow * sin(t * 0.45)) * uv;
+  uv += 0.06 * uFlow * vec2(sin(t * 0.55), cos(t * 0.38));
   uv = anchor + mat2(uTurn.x, uTurn.y, -uTurn.y, uTurn.x) * uv * 2.0 / uZoom;
-  uv += uWarp * vec2(sin(uv.y * 6.283 + t * 0.5), cos(uv.x * 6.283 + t * 0.5)) * 0.05;
+  uv += (uWarp + 0.05) * vec2(sin(uv.y * 5.0 + t * 1.2), cos(uv.x * 5.0 + t * 0.95)) * 0.07;
 
-  vec3 latent = uSeed + 0.1 * uFlow * vec3(sin(0.3 * t), sin(0.69 * t), sin(0.44 * t));
-  latent += touch * vec3(0.12, -0.1, 0.16);
+  vec3 latent = uSeed + 0.14 * uFlow * vec3(sin(0.7 * t), sin(1.25 * t), sin(0.85 * t));
+  latent += touch * vec3(0.14, -0.12, 0.18);
   latent.z += uUnfold;
 
   vec3 veil = cppn(uv, latent).rgb;
@@ -489,25 +489,25 @@ export function DarkVeil({
       const prevY = state.y
       const targetX = engaged
         ? pointer.x
-        : view.width * 0.5 + Math.sin(state.clock * 0.5) * (view.width * 0.25)
+        : view.width * 0.5 + Math.sin(state.clock * 0.85) * (view.width * 0.28)
       const targetY = engaged
         ? pointer.y
-        : view.height * 0.35 + Math.cos(state.clock * 0.38) * (view.height * 0.2)
+        : view.height * 0.38 + Math.cos(state.clock * 0.72) * (view.height * 0.22)
       state.x += (targetX - state.x) * follow
       state.y += (targetY - state.y) * follow
       const velX = (state.x - prevX) / Math.max(dt, 0.001)
       const velY = (state.y - prevY) / Math.max(dt, 0.001)
       const dragBlend = 1 - Math.exp(-dt * 5)
-      state.dragX += (clamp(velX * 0.12, -120, 120) - state.dragX) * dragBlend
-      state.dragY += (clamp(-velY * 0.12, -120, 120) - state.dragY) * dragBlend
-      const targetTouch = engaged ? 1 : reduce ? 0 : 0.45 + 0.2 * Math.sin(state.clock * 0.7)
-      state.touch += (targetTouch - state.touch) * (1 - Math.exp(-dt * (engaged ? 3 : 1.6)))
+      state.dragX += (clamp(velX * 0.15, -150, 150) - state.dragX) * dragBlend
+      state.dragY += (clamp(-velY * 0.15, -150, 150) - state.dragY) * dragBlend
+      const targetTouch = engaged ? 1 : reduce ? 0 : 0.55 + 0.25 * Math.sin(state.clock * 1.05)
+      state.touch += (targetTouch - state.touch) * (1 - Math.exp(-dt * (engaged ? 3 : 1.8)))
       const lightGoalX = engaged
         ? pointer.x / view.width
-        : 0.5 + 0.22 * Math.sin(state.clock * 0.4)
+        : 0.5 + 0.28 * Math.sin(state.clock * 0.75)
       const lightGoalY = engaged
         ? pointer.y / view.height
-        : 0.3 + 0.18 * Math.cos(state.clock * 0.3)
+        : 0.35 + 0.22 * Math.cos(state.clock * 0.62)
       const lightFollow = 1 - Math.exp(-dt * 4)
       state.lightX += (lightGoalX - state.lightX) * lightFollow
       state.lightY += (lightGoalY - state.lightY) * lightFollow
