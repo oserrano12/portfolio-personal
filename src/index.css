@@ -1,0 +1,121 @@
+@import "tailwindcss";
+
+@theme {
+  /* Design Tokens - Colors */
+  --color-base: #101114;
+  --color-surface: #1C1E23;
+  --color-surface-hover: #24272E;
+  --color-surface-active: #2C3038;
+
+  --color-lime: #C6FF4A;
+  --color-lime-hover: #B8F53B;
+  --color-lime-muted: rgba(198, 255, 74, 0.12);
+  --color-lime-border: rgba(198, 255, 74, 0.35);
+
+  --color-text-primary: #E9EAF0;
+  --color-text-secondary: #94A3B8;
+  --color-text-tertiary: #64748B;
+
+  --color-border-subtle: rgba(255, 255, 255, 0.08);
+  --color-border-hover: rgba(255, 255, 255, 0.18);
+  --color-border-active: rgba(198, 255, 74, 0.5);
+
+  /* Design Tokens - Typography */
+  --font-display: 'Space Grotesk', system-ui, -apple-system, sans-serif;
+  --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+
+  /* Design Tokens - Radii */
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-full: 9999px;
+
+  /* Design Tokens - Transitions & Motion */
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-smooth: 400ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Base resets & accessible global styles */
+:root {
+  color-scheme: dark;
+}
+
+html {
+  font-family: var(--font-body);
+  background-color: var(--color-base);
+  color: var(--color-text-primary);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: var(--color-base);
+  color: var(--color-text-primary);
+  overflow-x: hidden;
+}
+
+/* Global focus-visible fallback */
+:focus-visible {
+  outline: 2px solid var(--color-lime);
+  outline-offset: 3px;
+}
+
+/* Component-level accessibility utility: Focus Ring independiente */
+.focus-ring {
+  transition: box-shadow var(--transition-fast), outline var(--transition-fast);
+}
+
+.focus-ring:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--color-base), 0 0 0 4px var(--color-lime);
+}
+
+/* Skip-to-content accessibility link (WCAG 2.4.1) */
+.skip-to-content {
+  position: absolute;
+  top: -9999px;
+  left: 1rem;
+  z-index: 100;
+  padding: 0.75rem 1.25rem;
+  background-color: var(--color-lime);
+  color: var(--color-base);
+  font-weight: 600;
+  font-size: 0.875rem;
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+}
+
+.skip-to-content:focus {
+  top: 1rem;
+}
+
+/* Touch target minimum standard helper (WCAG 2.5.5 / 2.5.8: 44px min) */
+.touch-target {
+  min-height: 44px;
+  min-width: 44px;
+}
+
+/* Selection highlight */
+::selection {
+  background-color: var(--color-lime);
+  color: var(--color-base);
+}
+
+/* Respect user motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
