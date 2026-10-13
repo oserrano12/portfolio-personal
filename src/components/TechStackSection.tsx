@@ -123,6 +123,24 @@ const skills: SkillItem[] = [
     category: 'hardware',
   },
   {
+    name: 'Cisco Packet Tracer',
+    level: 'Avanzado',
+    description: 'Diseño, simulación y configuración de topologías de red, routers, conmutadores y protocolos.',
+    category: 'hardware',
+  },
+  {
+    name: 'Redes & Topologías',
+    level: 'Avanzado',
+    description: 'Arquitecturas de red lógicas y físicas (estrella, malla, árbol), modelos OSI y TCP/IP.',
+    category: 'hardware',
+  },
+  {
+    name: 'Subneteo & VLSM',
+    level: 'Avanzado',
+    description: 'Segmentación y direccionamiento de redes IPv4 utilizando VLSM y máscaras de longitud variable.',
+    category: 'hardware',
+  },
+  {
     name: 'Git & GitHub',
     level: 'Avanzado',
     description: 'Control de versiones profesional, flujo estructurado de ramas y commits atómicos.',
@@ -143,7 +161,7 @@ const categoryTabs: { id: CategoryTab; label: string; icon: typeof Layers }[] = 
   { id: 'frontend', label: 'Frontend', icon: Layout },
   { id: 'backend', label: 'Backend & APIs', icon: Server },
   { id: 'database', label: 'Bases de Datos & Cloud', icon: Database },
-  { id: 'hardware', label: 'Hardware & Entorno', icon: Cpu },
+  { id: 'hardware', label: 'Hardware & Redes', icon: Cpu },
 ]
 
 export default function TechStackSection() {
@@ -175,7 +193,7 @@ export default function TechStackSection() {
             Stack tecnológico
           </h2>
 
-          <p className="text-base text-text-secondary leading-relaxed mt-3">
+          <p className="text-[15px] text-text-secondary leading-relaxed mt-3">
             Tecnologías, librerías y herramientas con las que construyo soluciones de software,
             organizadas según mi experiencia práctica en proyectos reales y formación en
             Ingeniería de Sistemas.

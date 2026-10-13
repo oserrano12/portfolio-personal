@@ -70,7 +70,7 @@ export default function Hero() {
             </h1>
 
             {/* Presentation Bio */}
-            <p className="text-base sm:text-lg text-text-secondary leading-relaxed mb-8 max-w-xl">
+            <p className="text-[15px] sm:text-lg text-text-secondary leading-relaxed mb-8 max-w-xl">
               Estudiante de Ingeniería de Sistemas en las UTS, interesado en el desarrollo web,
               las bases de datos y la creación de soluciones de software funcionales.
             </p>

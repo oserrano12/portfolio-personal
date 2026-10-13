@@ -59,7 +59,7 @@ export default function ContactSection() {
             Contacto
           </h2>
 
-          <p className="text-base text-text-secondary leading-relaxed mt-3">
+          <p className="text-[15px] text-text-secondary leading-relaxed mt-3">
             ¿Tienes una propuesta laboral, proyecto freelance, pasantía universitaria o idea
             colaborativa? Contáctame directamente a través de cualquiera de estos canales.
           </p>

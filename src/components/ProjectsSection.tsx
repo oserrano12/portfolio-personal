@@ -54,7 +54,7 @@ export default function ProjectsSection() {
             Proyectos destacados
           </h2>
 
-          <p className="text-base text-text-secondary leading-relaxed mt-3">
+          <p className="text-[15px] text-text-secondary leading-relaxed mt-3">
             Selección de mis proyectos principales en GitHub con código fuente abierto
             y despliegues en producción verificados y accesibles en Vercel.
           </p>

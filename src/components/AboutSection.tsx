@@ -7,9 +7,10 @@ import {
   Database,
   MapPin,
   Sparkles,
-  Layers,
+  Network,
   Gamepad2,
   Headphones,
+  Cable,
 } from 'lucide-react'
 
 export default function AboutSection() {
@@ -34,10 +35,10 @@ export default function AboutSection() {
             Sobre mí
           </h2>
 
-          <p className="text-base text-text-secondary leading-relaxed mt-3">
+          <p className="text-[15px] text-text-secondary leading-relaxed mt-3">
             Estudiante de Ingeniería de Sistemas con enfoque en desarrollo web, interfaces
-            interactivas y comprensión profunda de la tecnología, desde los componentes de
-            hardware hasta la capa de usuario.
+            interactivas y comprensión integral de la tecnología, desde los componentes de
+            hardware y redes hasta la capa de usuario.
           </p>
         </div>
 
@@ -69,21 +70,33 @@ export default function AboutSection() {
                 Desarrollo frontend creativo y fundamentos de ingeniería
               </h3>
 
-              <p className="text-sm sm:text-base text-text-secondary leading-relaxed mt-3">
-                Actualmente curso la carrera de <strong>Ingeniería de Sistemas</strong> en las{' '}
-                <strong>Unidades Tecnológicas de Santander (UTS)</strong>. Mi pasión principal es
-                diseñar y maquetar interfaces web modernas, dinámicas y reactivas, cuidando la
-                composición visual, el rendimiento y la experiencia de usuario.
+              {/* High contrast, fully readable paragraphs */}
+              <p className="text-[15px] text-text-secondary leading-relaxed mt-3.5">
+                Actualmente curso la carrera de{' '}
+                <strong className="text-text-primary font-semibold">
+                  Ingeniería de Sistemas
+                </strong>{' '}
+                en las{' '}
+                <strong className="text-text-primary font-semibold">
+                  Unidades Tecnológicas de Santander (UTS)
+                </strong>
+                . Mi pasión principal es diseñar y maquetar interfaces web modernas, dinámicas y
+                reactivas, cuidando la composición visual, el rendimiento y la experiencia de
+                usuario.
               </p>
 
-              <p className="text-sm text-text-secondary leading-relaxed mt-3">
+              <p className="text-[15px] text-text-secondary leading-relaxed mt-3">
                 Me enfoco en transformar ideas en aplicaciones funcionales mediante código limpio y
-                modular con tecnologías contemporáneas como Next.js, React, TypeScript y Tailwind
-                CSS, respaldadas por arquitecturas de datos seguras y escalables.
+                modular con tecnologías contemporáneas como{' '}
+                <strong className="text-text-primary font-medium">Next.js</strong>,{' '}
+                <strong className="text-text-primary font-medium">React</strong>,{' '}
+                <strong className="text-text-primary font-medium">TypeScript</strong> y{' '}
+                <strong className="text-text-primary font-medium">Tailwind CSS</strong>,
+                respaldadas por arquitecturas de datos y buenas prácticas de desarrollo.
               </p>
             </div>
 
-            <div className="mt-6 pt-5 border-t border-border-subtle/80 flex flex-wrap items-center gap-3">
+            <div className="mt-6 pt-5 border-t border-border-subtle/80 flex flex-wrap items-center gap-2.5">
               <span className="px-3 py-1 rounded-lg text-xs font-mono bg-base text-text-secondary border border-border-subtle">
                 Diseño Web Interactivo
               </span>
@@ -122,22 +135,61 @@ export default function AboutSection() {
 
             <div className="mt-6 pt-4 border-t border-border-subtle/80 space-y-2">
               <div className="flex items-center gap-2 text-xs font-mono text-text-secondary">
-                <Wrench className="w-3.5 h-3.5 text-lime" aria-hidden="true" />
-                <span>Ensamble y diagnóstico técnico</span>
+                <Wrench className="w-3.5 h-3.5 text-lime shrink-0" aria-hidden="true" />
+                <span>Ensamble y diagnóstico de PCs</span>
               </div>
               <div className="flex items-center gap-2 text-xs font-mono text-text-secondary">
-                <Layers className="w-3.5 h-3.5 text-lime" aria-hidden="true" />
-                <span>Optimización de componentes y SO</span>
+                <Cable className="w-3.5 h-3.5 text-lime shrink-0" aria-hidden="true" />
+                <span>Mantenimiento y optimización de SO</span>
               </div>
             </div>
           </motion.div>
 
-          {/* Bento Card 3: Bases de Datos & Backend */}
+          {/* Bento Card 3: Redes, Topologías & Cisco */}
           <motion.div
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.4, delay: 0.15 }}
+            className="rounded-2xl bg-surface border border-border-subtle p-7 flex flex-col justify-between hover:border-lime-border/60 transition-all duration-300 relative group"
+          >
+            <div>
+              <div className="w-10 h-10 rounded-xl bg-base border border-border-subtle flex items-center justify-center text-lime mb-5">
+                <Network className="w-5 h-5" aria-hidden="true" />
+              </div>
+
+              <h3 className="text-xl font-bold font-display text-text-primary group-hover:text-white transition-colors">
+                Redes, Topologías & VLSM
+              </h3>
+
+              <p className="text-sm text-text-secondary leading-relaxed mt-3">
+                Conocimientos sólidos en diseño, análisis y simulación de redes en{' '}
+                <strong className="text-text-primary font-medium">Cisco Packet Tracer</strong>.
+                Cálculo de direccionamiento IP mediante{' '}
+                <strong className="text-text-primary font-medium">Subneteo y VLSM</strong>,
+                topologías lógicas y físicas y modelos de comunicación.
+              </p>
+            </div>
+
+            <div className="mt-6 pt-4 border-t border-border-subtle/80 flex flex-wrap gap-1.5">
+              <span className="px-2 py-0.5 rounded text-[11px] font-mono bg-base text-text-secondary border border-border-subtle">
+                Cisco Packet Tracer
+              </span>
+              <span className="px-2 py-0.5 rounded text-[11px] font-mono bg-base text-text-secondary border border-border-subtle">
+                VLSM & Subneteo
+              </span>
+              <span className="px-2 py-0.5 rounded text-[11px] font-mono bg-base text-text-secondary border border-border-subtle">
+                Topologías de Red
+              </span>
+            </div>
+          </motion.div>
+
+          {/* Bento Card 4: Bases de Datos & Backend */}
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.4, delay: 0.2 }}
             className="rounded-2xl bg-surface border border-border-subtle p-7 flex flex-col justify-between hover:border-lime-border/60 transition-all duration-300 relative group"
           >
             <div>
@@ -151,57 +203,56 @@ export default function AboutSection() {
 
               <p className="text-sm text-text-secondary leading-relaxed mt-3">
                 Modelado de bases de datos relacionales en PostgreSQL y Supabase. Implementación de
-                políticas de seguridad a nivel de filas (RLS), APIs RESTful y control estricto de
-                transacciones.
+                políticas de seguridad a nivel de filas (RLS), APIs RESTful con FastAPI y control
+                estricto de transacciones.
               </p>
             </div>
 
-            <div className="mt-6 pt-4 border-t border-border-subtle/80">
-              <span className="text-xs font-mono text-lime font-medium">
-                PostgreSQL • Supabase • FastAPI
+            <div className="mt-6 pt-4 border-t border-border-subtle/80 flex flex-wrap gap-1.5">
+              <span className="px-2 py-0.5 rounded text-[11px] font-mono bg-base text-lime border border-lime-border/40 font-medium">
+                PostgreSQL
+              </span>
+              <span className="px-2 py-0.5 rounded text-[11px] font-mono bg-base text-lime border border-lime-border/40 font-medium">
+                Supabase
+              </span>
+              <span className="px-2 py-0.5 rounded text-[11px] font-mono bg-base text-text-secondary border border-border-subtle">
+                FastAPI
               </span>
             </div>
           </motion.div>
 
-          {/* Bento Card 4: Filosofía de Trabajo & Pasiones */}
+          {/* Bento Card 5: Creatividad & Pasiones */}
           <motion.div
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.4, delay: 0.2 }}
-            className="md:col-span-2 rounded-2xl bg-surface border border-border-subtle p-7 flex flex-col justify-between hover:border-lime-border/60 transition-all duration-300 relative group"
+            transition={{ duration: 0.4, delay: 0.25 }}
+            className="rounded-2xl bg-surface border border-border-subtle p-7 flex flex-col justify-between hover:border-lime-border/60 transition-all duration-300 relative group"
           >
             <div>
-              <div className="flex items-center gap-2 mb-4">
-                <Sparkles className="w-4 h-4 text-lime" aria-hidden="true" />
-                <span className="text-xs font-mono text-text-secondary uppercase tracking-wider">
-                  Estilo de trabajo & motivación
-                </span>
+              <div className="w-10 h-10 rounded-xl bg-base border border-border-subtle flex items-center justify-center text-lime mb-5">
+                <Sparkles className="w-5 h-5" aria-hidden="true" />
               </div>
 
               <h3 className="text-xl font-bold font-display text-text-primary group-hover:text-white transition-colors">
-                Curiosidad técnica, música y resolución creativa de problemas
+                Curiosidad & Creatividad
               </h3>
 
               <p className="text-sm text-text-secondary leading-relaxed mt-3">
-                Me apasiona el aprendizaje autodidacta y estar al día con las herramientas que
-                definen la industria web. Fuera del código, disfruto de los videojuegos, escuchar
-                música y explorar nuevas tecnologías para seguir construyendo proyectos con alto
-                valor visual y técnico.
+                Aprendizaje autodidacta continuo. En mis tiempos libres disfruto escuchar música, los
+                videojuegos y explorar nuevas tecnologías para concebir software intuitivo y con
+                identidad.
               </p>
             </div>
 
-            <div className="mt-6 pt-4 border-t border-border-subtle/80 flex flex-wrap items-center gap-4 text-xs font-mono text-text-tertiary">
-              <span className="inline-flex items-center gap-1.5 text-text-secondary">
+            <div className="mt-6 pt-4 border-t border-border-subtle/80 flex items-center justify-between text-xs font-mono text-text-secondary">
+              <span className="inline-flex items-center gap-1.5">
                 <Headphones className="w-3.5 h-3.5 text-lime" aria-hidden="true" />
-                <span>Música & Concentración</span>
+                <span>Música</span>
               </span>
-              <span className="inline-flex items-center gap-1.5 text-text-secondary">
+              <span className="inline-flex items-center gap-1.5">
                 <Gamepad2 className="w-3.5 h-3.5 text-lime" aria-hidden="true" />
-                <span>Videojuegos & Creatividad</span>
-              </span>
-              <span className="inline-flex items-center gap-1.5 text-lime font-medium">
-                <span>Disponibilidad activa para proyectos</span>
+                <span>Videojuegos</span>
               </span>
             </div>
           </motion.div>
