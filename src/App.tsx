@@ -1,6 +1,9 @@
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import ProjectsSection from './components/ProjectsSection'
+import AboutSection from './components/AboutSection'
+import TechStackSection from './components/TechStackSection'
+import ContactSection from './components/ContactSection'
 
 const CURRENT_YEAR = new Date().getFullYear()
 
@@ -22,51 +25,14 @@ export default function App() {
         {/* Featured Projects Section */}
         <ProjectsSection />
 
-        {/* Section anchors (placeholders prepared for upcoming phases) */}
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 pb-20 space-y-12">
+        {/* About Section */}
+        <AboutSection />
 
-          {/* Target for #sobre-mi */}
-          <section
-            id="sobre-mi"
-            aria-labelledby="heading-sobre-mi"
-            className="pt-8 scroll-mt-20 border-t border-border-subtle/60"
-          >
-            <div className="flex items-center justify-between p-6 rounded-xl bg-surface/50 border border-border-subtle text-xs font-mono text-text-secondary">
-              <span id="heading-sobre-mi" className="font-semibold text-text-primary">
-                #sobre-mi
-              </span>
-              <span className="text-text-tertiary">Siguiente fase: Perfil y trayectoria académica</span>
-            </div>
-          </section>
+        {/* Tech Stack Section */}
+        <TechStackSection />
 
-          {/* Target for #stack */}
-          <section
-            id="stack"
-            aria-labelledby="heading-stack"
-            className="pt-8 scroll-mt-20 border-t border-border-subtle/60"
-          >
-            <div className="flex items-center justify-between p-6 rounded-xl bg-surface/50 border border-border-subtle text-xs font-mono text-text-secondary">
-              <span id="heading-stack" className="font-semibold text-text-primary">
-                #stack
-              </span>
-              <span className="text-text-tertiary">Siguiente fase: Stack tecnológico categorizado</span>
-            </div>
-          </section>
-
-          {/* Target for #contacto */}
-          <section
-            id="contacto"
-            aria-labelledby="heading-contacto"
-            className="pt-8 scroll-mt-20 border-t border-border-subtle/60"
-          >
-            <div className="flex items-center justify-between p-6 rounded-xl bg-surface/50 border border-border-subtle text-xs font-mono text-text-secondary">
-              <span id="heading-contacto" className="font-semibold text-text-primary">
-                #contacto
-              </span>
-              <span className="text-lime">Siguiente fase: Tarjetas interactivas y formulario</span>
-            </div>
-          </section>
-        </div>
+        {/* Contact Section */}
+        <ContactSection />
       </main>
 
       {/* Footer */}
