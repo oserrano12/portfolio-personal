@@ -1,5 +1,6 @@
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
+import ProjectsSection from './components/ProjectsSection'
 
 const CURRENT_YEAR = new Date().getFullYear()
 
@@ -18,21 +19,11 @@ export default function App() {
       <main id="main-content" className="flex-1">
         <Hero />
 
+        {/* Featured Projects Section */}
+        <ProjectsSection />
+
         {/* Section anchors (placeholders prepared for upcoming phases) */}
         <div className="max-w-6xl mx-auto px-4 sm:px-6 pb-20 space-y-12">
-          {/* Target for #proyectos */}
-          <section
-            id="proyectos"
-            aria-labelledby="heading-proyectos"
-            className="pt-12 scroll-mt-20 border-t border-border-subtle/60"
-          >
-            <div className="flex items-center justify-between p-6 rounded-xl bg-surface/50 border border-border-subtle text-xs font-mono text-text-secondary">
-              <span id="heading-proyectos" className="font-semibold text-text-primary">
-                #proyectos
-              </span>
-              <span className="text-lime">Siguiente fase: Catálogo de proyectos destacados</span>
-            </div>
-          </section>
 
           {/* Target for #sobre-mi */}
           <section
