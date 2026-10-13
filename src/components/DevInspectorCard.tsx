@@ -35,13 +35,13 @@ export default function DevInspectorCard() {
   nombre: "Oscar Serrano",
   rol: "Estudiante de Ing. de Sistemas",
   institucion: "UTS (Bucaramanga, CO)",
-  intereses: [
-    "Desarrollo Web (Full Stack Jr)",
-    "PostgreSQL & Bases de Datos",
-    "Hardware & Arquitectura PC",
-    "Algoritmos & Lógica"
+  competenciasPrincipales: [
+    "JavaScript & Java",
+    "HTML5 & CSS3",
+    "Bases de Datos & SQL",
+    "Hardware & Soporte de PC"
   ],
-  stackPreferido: ["TypeScript", "Python", "React", "SQL"],
+  stackPractico: ["React", "TypeScript", "FastAPI", "Node"],
   disponibilidad: "Pasantías & Proyectos"
 };`
 
@@ -111,13 +111,13 @@ export default function DevInspectorCard() {
             {'  '}<span className="text-text-primary">nombre</span>: <span className="text-lime">"Oscar Serrano"</span>,{'\n'}
             {'  '}<span className="text-text-primary">rol</span>: <span className="text-lime">"Estudiante de Ing. de Sistemas"</span>,{'\n'}
             {'  '}<span className="text-text-primary">institucion</span>: <span className="text-lime">"UTS (Bucaramanga, CO)"</span>,{'\n'}
-            {'  '}<span className="text-text-primary">intereses</span>: [{'\n'}
-            {'    '}<span className="text-text-secondary">"Desarrollo Web (Full Stack Jr)"</span>,{'\n'}
-            {'    '}<span className="text-text-secondary">"PostgreSQL &amp; Bases de Datos"</span>,{'\n'}
-            {'    '}<span className="text-text-secondary">"Hardware &amp; Arquitectura PC"</span>,{'\n'}
-            {'    '}<span className="text-text-secondary">"Algoritmos &amp; Lógica"</span>{'\n'}
+            {'  '}<span className="text-text-primary">competenciasPrincipales</span>: [{'\n'}
+            {'    '}<span className="text-text-secondary">"JavaScript &amp; Java"</span>,{'\n'}
+            {'    '}<span className="text-text-secondary">"HTML5 &amp; CSS3"</span>,{'\n'}
+            {'    '}<span className="text-text-secondary">"Bases de Datos &amp; SQL"</span>,{'\n'}
+            {'    '}<span className="text-text-secondary">"Hardware &amp; Soporte de PC"</span>{'\n'}
             {'  '}],{'\n'}
-            {'  '}<span className="text-text-primary">stackPreferido</span>: [<span className="text-lime">"TypeScript"</span>, <span className="text-lime">"Python"</span>, <span className="text-lime">"React"</span>, <span className="text-lime">"SQL"</span>],{'\n'}
+            {'  '}<span className="text-text-primary">stackPractico</span>: [<span className="text-lime">"React"</span>, <span className="text-lime">"TypeScript"</span>, <span className="text-lime">"FastAPI"</span>, <span className="text-lime">"Node"</span>],{'\n'}
             {'  '}<span className="text-text-primary">disponibilidad</span>: <span className="text-lime">"Pasantías &amp; Proyectos"</span>{'\n'}
             &#125;;
           </code>

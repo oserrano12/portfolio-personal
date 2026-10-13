@@ -68,7 +68,7 @@ export default function AboutSection() {
               </div>
 
               <h3 className="text-2xl font-bold font-display text-text-primary group-hover:text-white transition-colors">
-                Desarrollo frontend creativo y fundamentos de ingeniería
+                Ingeniería de Sistemas y Desarrollo de Software
               </h3>
 
               {/* High contrast, fully readable paragraphs */}
@@ -81,31 +81,35 @@ export default function AboutSection() {
                 <strong className="text-text-primary font-semibold">
                   Unidades Tecnológicas de Santander (UTS)
                 </strong>
-                . Mi pasión principal es diseñar y maquetar interfaces web modernas, dinámicas y
-                reactivas, cuidando la composición visual, el rendimiento y la experiencia de
-                usuario.
+                . Mis fortalezas técnicas principales radican en la lógica de programación y maquetación con{' '}
+                <strong className="text-text-primary font-semibold">HTML, CSS y JavaScript</strong>,
+                la arquitectura orientada a objetos en{' '}
+                <strong className="text-text-primary font-semibold">Java</strong> y el diseño avanzado de{' '}
+                <strong className="text-text-primary font-semibold">Bases de Datos Relacionales (SQL)</strong>.
               </p>
 
               <p className="text-[15px] text-text-secondary leading-relaxed mt-3">
-                Me enfoco en transformar ideas en aplicaciones funcionales mediante código limpio y
-                modular con tecnologías contemporáneas como{' '}
-                <strong className="text-text-primary font-medium">Next.js</strong>,{' '}
+                Complemento mi perfil con desarrollo práctico en{' '}
                 <strong className="text-text-primary font-medium">React</strong>,{' '}
-                <strong className="text-text-primary font-medium">TypeScript</strong> y{' '}
-                <strong className="text-text-primary font-medium">Tailwind CSS</strong>,
-                respaldadas por arquitecturas de datos y buenas prácticas de desarrollo.
+                <strong className="text-text-primary font-medium">TypeScript</strong>,{' '}
+                <strong className="text-text-primary font-medium">Python (FastAPI)</strong> y{' '}
+                <strong className="text-text-primary font-medium">Node.js</strong>,
+                con una visión técnica integral que conecta el ensamble y mantenimiento de hardware con el desarrollo de software.
               </p>
             </div>
 
             <div className="mt-6 pt-5 border-t border-border-subtle/80 flex flex-wrap items-center gap-2.5">
               <span className="px-3 py-1 rounded-lg text-xs font-mono bg-base text-text-secondary border border-border-subtle">
-                Diseño Web Interactivo
+                JavaScript & Java
               </span>
               <span className="px-3 py-1 rounded-lg text-xs font-mono bg-base text-text-secondary border border-border-subtle">
-                Arquitectura de Software
+                Bases de Datos & SQL
               </span>
               <span className="px-3 py-1 rounded-lg text-xs font-mono bg-base text-text-secondary border border-border-subtle">
-                Mobile-First & A11y
+                HTML5 & CSS3
+              </span>
+              <span className="px-3 py-1 rounded-lg text-xs font-mono bg-base text-text-secondary border border-border-subtle">
+                Hardware & Redes
               </span>
             </div>
           </motion.div>
@@ -202,25 +206,25 @@ export default function AboutSection() {
               </div>
 
               <h3 className="text-xl font-bold font-display text-text-primary group-hover:text-white transition-colors">
-                Datos & Lógica de Servidor
+                Bases de Datos & Persistencia
               </h3>
 
               <p className="text-sm text-text-secondary leading-relaxed mt-3">
-                Modelado de bases de datos relacionales en PostgreSQL y Supabase. Implementación de
-                políticas de seguridad a nivel de filas (RLS), APIs RESTful con FastAPI y control
-                estricto de transacciones.
+                Dominio avanzado en modelado relacional (Diagramas E-R), consultas SQL complejas, normalización e integridad de datos en{' '}
+                <strong className="text-text-primary font-medium">PostgreSQL</strong> y{' '}
+                <strong className="text-text-primary font-medium">MySQL</strong>, además de persistencia segura en la nube con Supabase.
               </p>
             </div>
 
             <div className="mt-6 pt-4 border-t border-border-subtle/80 flex flex-wrap gap-1.5">
               <span className="px-2 py-0.5 rounded text-[11px] font-mono bg-base text-lime border border-lime-border/40 font-medium">
-                PostgreSQL
+                SQL Relacional
               </span>
               <span className="px-2 py-0.5 rounded text-[11px] font-mono bg-base text-lime border border-lime-border/40 font-medium">
-                Supabase
+                PostgreSQL & MySQL
               </span>
               <span className="px-2 py-0.5 rounded text-[11px] font-mono bg-base text-text-secondary border border-border-subtle">
-                FastAPI
+                Supabase & RLS
               </span>
             </div>
           </motion.div>

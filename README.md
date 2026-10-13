@@ -35,10 +35,10 @@ Portafolio web personal y profesional de **Oscar Serrano**, estudiante de Ingeni
   - Filtros interactivos por categoría (*Todos*, *E-commerce & Fullstack*, *Académicos UTS*, *Tailwind CSS*) con animaciones de entrada y salida (`AnimatePresence`).
 
 - **Sección «Sobre mí» en Bento Grid:**
-  - Visión holística de la ingeniería: desarrollo web frontend, fundamentos de hardware de PC, redes con Cisco Packet Tracer, VLSM y bases de datos relacionales.
+  - Visión integral de la ingeniería: desarrollo de software y algoritmia en JavaScript y Java, diseño avanzado de bases de datos relacionales (SQL), ensamble y mantenimiento de hardware de PC, y redes con Cisco Packet Tracer y VLSM.
 
 - **Stack Tecnológico Clasificado:**
-  - Listado de tecnologías organizadas por categoría (Frontend, Backend, Bases de Datos, Redes y Herramientas) con etiquetas de dominio (*Principal*, *Avanzado*, *Sólido*).
+  - Matriz de competencias estructurada por grado real de dominio (*Principal*, *Avanzado*, *Intermedio*, *Básico*), destacando conocimientos centrales en JS, Java, HTML5/CSS3, SQL, hardware y soporte técnico.
 
 - **Canales de Contacto Directos:**
   - Tarjetas interactivas con copia en 1 clic para Correo Electrónico (`serranojaimesoscarsteven@hotmail.com`), Discord (`deadly04`) y GitHub (`oserrano12`).
