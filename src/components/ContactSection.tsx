@@ -241,7 +241,7 @@ export default function ContactSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="lg:col-span-2 rounded-2xl bg-surface border border-border-subtle p-6 sm:p-8 flex flex-col justify-between"
+            className="lg:col-span-2 rounded-2xl bg-surface border border-border-subtle p-5 sm:p-8 flex flex-col justify-between"
           >
             <div>
               <div className="flex items-center gap-2 mb-2">
@@ -271,7 +271,7 @@ export default function ContactSection() {
                       value={name}
                       onChange={(e) => setName(e.target.value)}
                       placeholder="Ej. Carlos / Empresa XYZ"
-                      className="w-full px-3.5 py-2.5 rounded-xl bg-base border border-border-subtle text-sm text-text-primary placeholder:text-text-tertiary focus-ring transition-colors"
+                      className="w-full px-3.5 py-2.5 rounded-xl bg-base border border-border-subtle text-[15px] sm:text-sm text-text-primary placeholder:text-text-tertiary focus-ring transition-colors"
                     />
                   </div>
 
@@ -289,7 +289,7 @@ export default function ContactSection() {
                       value={senderEmail}
                       onChange={(e) => setSenderEmail(e.target.value)}
                       placeholder="nombre@ejemplo.com"
-                      className="w-full px-3.5 py-2.5 rounded-xl bg-base border border-border-subtle text-sm text-text-primary placeholder:text-text-tertiary focus-ring transition-colors"
+                      className="w-full px-3.5 py-2.5 rounded-xl bg-base border border-border-subtle text-[15px] sm:text-sm text-text-primary placeholder:text-text-tertiary focus-ring transition-colors"
                     />
                   </div>
                 </div>
@@ -308,23 +308,24 @@ export default function ContactSection() {
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
                     placeholder="Cuéntame sobre la oportunidad, proyecto o consulta técnica..."
-                    className="w-full px-3.5 py-2.5 rounded-xl bg-base border border-border-subtle text-sm text-text-primary placeholder:text-text-tertiary focus-ring transition-colors resize-none"
+                    className="w-full px-3.5 py-2.5 rounded-xl bg-base border border-border-subtle text-[15px] sm:text-sm text-text-primary placeholder:text-text-tertiary focus-ring transition-colors resize-none"
                   />
                 </div>
 
-                <div className="pt-2 flex items-center justify-between">
-                  <span className="text-[11px] font-mono text-text-tertiary">
-                    Entrega directa a serranojaimesoscarsteven@hotmail.com
+                <div className="pt-2 flex flex-col-reverse sm:flex-row sm:items-center sm:justify-between gap-3 sm:gap-4">
+                  <span className="text-[11px] font-mono text-text-tertiary text-center sm:text-left break-all">
+                    Entrega directa a{' '}
+                    <span className="text-text-secondary select-all">serranojaimesoscarsteven@hotmail.com</span>
                   </span>
 
                   <motion.button
                     whileHover={{ scale: 1.02, y: -1 }}
                     whileTap={{ scale: 0.96 }}
                     type="submit"
-                    className="touch-target inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-lime text-base font-semibold text-xs font-mono hover:bg-lime-hover transition-colors shadow-lg shadow-lime/10 focus-ring"
+                    className="touch-target w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-xl bg-lime text-base font-semibold text-xs sm:text-sm font-mono hover:bg-lime-hover transition-colors shadow-lg shadow-lime/10 focus-ring shrink-0 whitespace-nowrap cursor-pointer"
                   >
                     <span>Enviar propuesta</span>
-                    <Send className="w-3.5 h-3.5" />
+                    <Send className="w-3.5 h-3.5 shrink-0" />
                   </motion.button>
                 </div>
               </form>
