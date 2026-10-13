@@ -11,6 +11,7 @@ import {
 } from 'lucide-react'
 import DevInspectorCard from './DevInspectorCard'
 import GithubIcon from './GithubIcon'
+import DarkVeil from './DarkVeil'
 
 export default function Hero() {
   const [copiedDiscord, setCopiedDiscord] = useState(false)
@@ -37,13 +38,38 @@ export default function Hero() {
       aria-labelledby="hero-heading"
       className="relative pt-12 pb-20 md:pt-20 md:pb-28 overflow-hidden"
     >
-      {/* Background ambient gradient glow */}
+      {/* Dark Veil Animated Backdrop (React Bits) */}
       <div
-        className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[350px] bg-lime/5 blur-[120px] pointer-events-none rounded-full"
+        className="absolute inset-0 pointer-events-none overflow-hidden z-0"
+        aria-hidden="true"
+      >
+        <DarkVeil
+          color="#4d7c1b"
+          speed={0.25}
+          scale={0.95}
+          flow={0.7}
+          warp={0.12}
+          brightness={0.42}
+          glow={0.3}
+          sheen={0.18}
+          fade={0.35}
+          opacity={0.65}
+          quality={0.5}
+          mouseInteraction={true}
+          mouseStrength={0.7}
+          className="w-full h-full"
+        />
+        {/* Soft edge fade into base color */}
+        <div className="absolute inset-0 bg-gradient-to-b from-base/10 via-transparent to-base pointer-events-none" />
+      </div>
+
+      {/* Subtle background ambient gradient glow */}
+      <div
+        className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[350px] bg-lime/5 blur-[120px] pointer-events-none rounded-full z-0"
         aria-hidden="true"
       />
 
-      <div className="max-w-6xl mx-auto px-4 sm:px-6">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
           {/* Left Column: Text & Actions */}
           <motion.div
