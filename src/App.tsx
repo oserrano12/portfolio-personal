@@ -4,6 +4,7 @@ import ProjectsSection from './components/ProjectsSection'
 import AboutSection from './components/AboutSection'
 import TechStackSection from './components/TechStackSection'
 import ContactSection from './components/ContactSection'
+import ScrollToTop from './components/ScrollToTop'
 
 const CURRENT_YEAR = new Date().getFullYear()
 
@@ -49,6 +50,9 @@ export default function App() {
           </a>
         </div>
       </footer>
+
+      {/* Floating Back to Top Button */}
+      <ScrollToTop />
     </div>
   )
 }
