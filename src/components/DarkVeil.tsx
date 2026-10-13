@@ -583,6 +583,11 @@ export function DarkVeil({
       wake()
     }
 
+    const onContextLost = (e: Event) => {
+      e.preventDefault()
+    }
+    canvas.addEventListener('webglcontextlost', onContextLost)
+
     return () => {
       cancelAnimationFrame(raf)
       wakeRef.current = null
@@ -591,13 +596,13 @@ export function DarkVeil({
       window.removeEventListener('pointermove', onPointerMove)
       document.documentElement.removeEventListener('pointerleave', onPointerLeave)
       document.removeEventListener('visibilitychange', onVisibility)
+      canvas.removeEventListener('webglcontextlost', onContextLost)
       if (texture) gl.deleteTexture(texture)
       gl.deleteFramebuffer(framebuffer)
       gl.deleteProgram(fieldProgram.program)
       gl.deleteProgram(compositeProgram.program)
       gl.deleteBuffer(buffer)
       gl.deleteVertexArray(vao)
-      gl.getExtension('WEBGL_lose_context')?.loseContext()
     }
   }, [])
 
