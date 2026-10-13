@@ -41,7 +41,10 @@ export default function DevInspectorCard() {
     "Bases de Datos & SQL",
     "Hardware & Soporte de PC"
   ],
-  stackPractico: ["React", "TypeScript", "FastAPI", "Node"],
+  stackPractico: [
+    "React", "TypeScript",
+    "FastAPI", "Node.js"
+  ],
   disponibilidad: "Pasantías & Proyectos"
 };`
 
@@ -103,8 +106,8 @@ export default function DevInspectorCard() {
       </div>
 
       {/* Editor Body */}
-      <div className="p-5 font-mono text-xs sm:text-sm leading-relaxed overflow-x-auto">
-        <pre className="text-text-secondary">
+      <div className="p-4 sm:p-5 font-mono text-xs sm:text-[13px] leading-relaxed overflow-hidden">
+        <pre className="text-text-secondary overflow-hidden">
           <code>
             <span className="text-[#89DDFF]">const</span> <span className="text-[#FFCB6B]">developer</span>{' '}
             <span className="text-[#89DDFF]">=</span> &#123;{'\n'}
@@ -117,7 +120,10 @@ export default function DevInspectorCard() {
             {'    '}<span className="text-text-secondary">"Bases de Datos &amp; SQL"</span>,{'\n'}
             {'    '}<span className="text-text-secondary">"Hardware &amp; Soporte de PC"</span>{'\n'}
             {'  '}],{'\n'}
-            {'  '}<span className="text-text-primary">stackPractico</span>: [<span className="text-lime">"React"</span>, <span className="text-lime">"TypeScript"</span>, <span className="text-lime">"FastAPI"</span>, <span className="text-lime">"Node"</span>],{'\n'}
+            {'  '}<span className="text-text-primary">stackPractico</span>: [{'\n'}
+            {'    '}<span className="text-lime">"React"</span>, <span className="text-lime">"TypeScript"</span>,{'\n'}
+            {'    '}<span className="text-lime">"FastAPI"</span>, <span className="text-lime">"Node.js"</span>{'\n'}
+            {'  '}],{'\n'}
             {'  '}<span className="text-text-primary">disponibilidad</span>: <span className="text-lime">"Pasantías &amp; Proyectos"</span>{'\n'}
             &#125;;
           </code>
@@ -130,7 +136,7 @@ export default function DevInspectorCard() {
           <span className="w-1.5 h-1.5 rounded-full bg-lime" aria-hidden="true" />
           <span>TypeScript 5.x • UTF-8</span>
         </span>
-        <span>Ln 14, Col 2</span>
+        <span>Ln 16, Col 2</span>
       </div>
     </div>
   )
