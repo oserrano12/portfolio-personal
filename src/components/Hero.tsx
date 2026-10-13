@@ -44,30 +44,26 @@ export default function Hero() {
         aria-hidden="true"
       >
         <DarkVeil
-          color="#4d7c1b"
-          speed={0.25}
-          scale={0.95}
-          flow={0.7}
-          warp={0.12}
-          brightness={0.42}
-          glow={0.3}
-          sheen={0.18}
-          fade={0.35}
-          opacity={0.65}
-          quality={0.5}
+          color="#C6FF4A"
+          speed={0.4}
+          scale={1.0}
+          flow={1.0}
+          warp={0}
+          variation={0}
+          brightness={1.0}
+          glow={0.45}
+          sheen={0}
+          intro={false}
+          fade={0}
+          opacity={0.85}
+          quality={0.6}
           mouseInteraction={true}
-          mouseStrength={0.7}
+          mouseStrength={0.9}
           className="w-full h-full"
         />
-        {/* Soft edge fade into base color */}
-        <div className="absolute inset-0 bg-gradient-to-b from-base/10 via-transparent to-base pointer-events-none" />
+        {/* Smooth transition into subsequent section */}
+        <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-base to-transparent pointer-events-none" />
       </div>
-
-      {/* Subtle background ambient gradient glow */}
-      <div
-        className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[350px] bg-lime/5 blur-[120px] pointer-events-none rounded-full z-0"
-        aria-hidden="true"
-      />
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">

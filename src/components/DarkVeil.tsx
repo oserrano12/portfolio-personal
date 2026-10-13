@@ -213,7 +213,8 @@ void main() {
     vec3 color = 1.0 - exp(-light);
     color = pow(color, vec3(1.0 / 2.2));
     color = clamp(color + grain * peak + dither, 0.0, 1.0) * mask;
-    outColor = vec4(color, max(color.r, max(color.g, color.b)));
+    float alpha = clamp(max(color.r, max(color.g, color.b)), 0.0, 1.0);
+    outColor = vec4(color * alpha, alpha);
   }
 }`
 
@@ -330,7 +331,8 @@ export function DarkVeil({
     })
     if (!container || !canvas || !gl) return undefined
 
-    const floatTargets = !!gl.getExtension('EXT_color_buffer_float')
+    const hasFloatLinear = !!gl.getExtension('OES_texture_float_linear')
+    const floatTargets = !!gl.getExtension('EXT_color_buffer_float') && hasFloatLinear
     const fieldProgram = link(gl, FIELD)
     const compositeProgram = link(gl, COMPOSITE)
     if (!fieldProgram || !compositeProgram) return undefined
@@ -343,13 +345,17 @@ export function DarkVeil({
     gl.enableVertexAttribArray(0)
     gl.vertexAttribPointer(0, 2, gl.FLOAT, false, 0, 0)
 
-    const texture = gl.createTexture()
+    let texture: WebGLTexture | null = null
     const framebuffer = gl.createFramebuffer()
     const target = { width: 0, height: 0 }
     const sizeTarget = (width: number, height: number) => {
-      if (target.width === width && target.height === height) return
+      if (target.width === width && target.height === height && texture) return
       target.width = width
       target.height = height
+      if (texture) {
+        gl.deleteTexture(texture)
+      }
+      texture = gl.createTexture()
       gl.bindTexture(gl.TEXTURE_2D, texture)
       const levels = Math.floor(Math.log2(Math.max(width, height))) + 1
       gl.texStorage2D(gl.TEXTURE_2D, levels, floatTargets ? gl.RGBA16F : gl.RGBA8, width, height)
@@ -585,7 +591,7 @@ export function DarkVeil({
       window.removeEventListener('pointermove', onPointerMove)
       document.documentElement.removeEventListener('pointerleave', onPointerLeave)
       document.removeEventListener('visibilitychange', onVisibility)
-      gl.deleteTexture(texture)
+      if (texture) gl.deleteTexture(texture)
       gl.deleteFramebuffer(framebuffer)
       gl.deleteProgram(fieldProgram.program)
       gl.deleteProgram(compositeProgram.program)
@@ -603,12 +609,7 @@ export function DarkVeil({
   return (
     <div
       ref={containerRef}
-      className={[
-        'relative h-full w-full overflow-hidden bg-[radial-gradient(ellipse_70%_50%_at_50%_40%,rgba(77,124,27,0.1),transparent_75%)]',
-        className,
-      ]
-        .filter(Boolean)
-        .join(' ')}
+      className={['relative h-full w-full overflow-hidden', className].filter(Boolean).join(' ')}
       {...rest}
     >
       <canvas ref={canvasRef} className="absolute inset-0 block h-full w-full" aria-hidden="true" />
