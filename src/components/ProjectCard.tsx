@@ -1,5 +1,5 @@
 import { motion } from 'motion/react'
-import { ExternalLink, ArrowUpRight, Check, Sparkles, Laptop, Server } from 'lucide-react'
+import { ExternalLink, ArrowUpRight, Check, Sparkles, Globe } from 'lucide-react'
 import type { Project } from '../data/projects'
 import GithubIcon from './GithubIcon'
 
@@ -117,17 +117,8 @@ export default function ProjectCard({ project }: ProjectCardProps) {
             </a>
           ) : (
             <span className="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg text-xs font-mono text-text-tertiary bg-base/40 border border-border-subtle/40">
-              {project.categories.includes('java') ? (
-                <>
-                  <Laptop className="w-3.5 h-3.5 text-text-tertiary" aria-hidden="true" />
-                  <span>App de escritorio</span>
-                </>
-              ) : (
-                <>
-                  <Server className="w-3.5 h-3.5 text-text-tertiary" aria-hidden="true" />
-                  <span>API Backend / PWA</span>
-                </>
-              )}
+              <Globe className="w-3.5 h-3.5 text-text-tertiary" aria-hidden="true" />
+              <span>Proyecto Web</span>
             </span>
           )}
         </div>

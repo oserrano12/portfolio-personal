@@ -10,18 +10,26 @@ export default function ProjectsSection() {
 
   // Calculate project count for each filter category
   const filterCounts = useMemo(() => {
-    return {
+    const counts: Record<FilterOption['id'], number> = {
       all: projectsData.length,
-      web: projectsData.filter((p) => p.categories.includes('web')).length,
-      database: projectsData.filter((p) => p.categories.includes('database')).length,
-      java: projectsData.filter((p) => p.categories.includes('java')).length,
+      ecommerce: 0,
+      tailwind: 0,
+      academico: 0,
     }
+    for (const option of filterOptions) {
+      const category = option.id
+      if (category !== 'all') {
+        counts[category] = projectsData.filter((p) => p.categories.includes(category)).length
+      }
+    }
+    return counts
   }, [])
 
   // Filtered projects list
   const filteredProjects = useMemo(() => {
     if (activeFilter === 'all') return projectsData
-    return projectsData.filter((p) => p.categories.includes(activeFilter))
+    const category = activeFilter
+    return projectsData.filter((p) => p.categories.includes(category))
   }, [activeFilter])
 
   return (
@@ -47,8 +55,8 @@ export default function ProjectsSection() {
           </h2>
 
           <p className="text-base text-text-secondary leading-relaxed mt-3">
-            Selección de proyectos prácticos que demuestran mi capacidad en desarrollo web,
-            arquitecturas de software, bases de datos relacionales y diseño de interfaces.
+            Selección de mis proyectos principales en GitHub con código fuente abierto
+            y despliegues en producción verificados y accesibles en Vercel.
           </p>
         </div>
 
