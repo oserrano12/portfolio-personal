@@ -11,7 +11,6 @@ import {
 } from 'lucide-react'
 import DevInspectorCard from './DevInspectorCard'
 import GithubIcon from './GithubIcon'
-import DarkVeil from './DarkVeil'
 
 export default function Hero() {
   const [copiedDiscord, setCopiedDiscord] = useState(false)
@@ -38,33 +37,6 @@ export default function Hero() {
       aria-labelledby="hero-heading"
       className="relative pt-12 pb-20 md:pt-20 md:pb-28 overflow-hidden"
     >
-      {/* Dark Veil Animated Backdrop (React Bits) */}
-      <div
-        className="absolute inset-0 pointer-events-none overflow-hidden z-0"
-        aria-hidden="true"
-      >
-        <DarkVeil
-          color="#C6FF4A"
-          speed={0.4}
-          scale={1.0}
-          flow={1.0}
-          warp={0}
-          variation={0}
-          brightness={1.0}
-          glow={0.45}
-          sheen={0}
-          intro={false}
-          fade={0}
-          opacity={0.85}
-          quality={0.6}
-          mouseInteraction={true}
-          mouseStrength={0.9}
-          className="w-full h-full"
-        />
-        {/* Smooth transition into subsequent section */}
-        <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-base to-transparent pointer-events-none" />
-      </div>
-
       <div className="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
           {/* Left Column: Text & Actions */}
