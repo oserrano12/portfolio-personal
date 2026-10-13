@@ -25,17 +25,17 @@ export default function AmbientBackground() {
       <div className="absolute inset-0">
         <DarkVeil
           color="#C6FF4A"
-          speed={0.35}
+          speed={0.7}
           scale={1.0}
-          flow={0.9}
+          flow={1.2}
           warp={0}
           variation={0}
-          brightness={0.8}
-          glow={0.35}
+          brightness={0.85}
+          glow={0.38}
           sheen={0}
           intro={false}
           fade={0}
-          opacity={0.65}
+          opacity={0.68}
           quality={0.5}
           mouseInteraction={true}
           mouseStrength={0.8}

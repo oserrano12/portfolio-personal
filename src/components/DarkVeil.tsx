@@ -487,16 +487,27 @@ export function DarkVeil({
       const follow = 1 - Math.exp(-dt * 9)
       const prevX = state.x
       const prevY = state.y
-      state.x += (pointer.x - state.x) * follow
-      state.y += (pointer.y - state.y) * follow
+      const targetX = engaged
+        ? pointer.x
+        : view.width * 0.5 + Math.sin(state.clock * 0.5) * (view.width * 0.25)
+      const targetY = engaged
+        ? pointer.y
+        : view.height * 0.35 + Math.cos(state.clock * 0.38) * (view.height * 0.2)
+      state.x += (targetX - state.x) * follow
+      state.y += (targetY - state.y) * follow
       const velX = (state.x - prevX) / Math.max(dt, 0.001)
       const velY = (state.y - prevY) / Math.max(dt, 0.001)
       const dragBlend = 1 - Math.exp(-dt * 5)
       state.dragX += (clamp(velX * 0.12, -120, 120) - state.dragX) * dragBlend
       state.dragY += (clamp(-velY * 0.12, -120, 120) - state.dragY) * dragBlend
-      state.touch += ((engaged ? 1 : 0) - state.touch) * (1 - Math.exp(-dt * (engaged ? 3 : 1.6)))
-      const lightGoalX = engaged ? pointer.x / view.width : 0.5
-      const lightGoalY = engaged ? pointer.y / view.height : 0.15
+      const targetTouch = engaged ? 1 : reduce ? 0 : 0.45 + 0.2 * Math.sin(state.clock * 0.7)
+      state.touch += (targetTouch - state.touch) * (1 - Math.exp(-dt * (engaged ? 3 : 1.6)))
+      const lightGoalX = engaged
+        ? pointer.x / view.width
+        : 0.5 + 0.22 * Math.sin(state.clock * 0.4)
+      const lightGoalY = engaged
+        ? pointer.y / view.height
+        : 0.3 + 0.18 * Math.cos(state.clock * 0.3)
       const lightFollow = 1 - Math.exp(-dt * 4)
       state.lightX += (lightGoalX - state.lightX) * lightFollow
       state.lightY += (lightGoalY - state.lightY) * lightFollow
