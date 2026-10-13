@@ -55,22 +55,26 @@ export default function Navbar() {
     <header className="sticky top-0 z-50 w-full bg-[rgba(16,17,20,0.85)] backdrop-blur-md border-b border-border-subtle transition-colors">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
         {/* Brand */}
-        <a
+        <motion.a
+          whileHover={{ scale: 1.02 }}
+          whileTap={{ scale: 0.97 }}
           href="#hero"
           className="font-display font-bold text-lg tracking-tight text-text-primary hover:text-white transition-colors focus-ring rounded-sm px-1 py-0.5 inline-flex items-center gap-1"
         >
           <span>&lt;oscar</span>
           <span className="text-lime">.</span>
           <span>dev /&gt;</span>
-        </a>
+        </motion.a>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center gap-1" aria-label="Navegación principal">
           {navItems.map((item) => {
             const isActive = activeSection === item.href.substring(1)
             return (
-              <a
+              <motion.a
                 key={item.href}
+                whileHover={{ y: -1 }}
+                whileTap={{ scale: 0.96 }}
                 href={item.href}
                 className={`px-3 py-1.5 text-sm font-medium rounded-md transition-colors focus-ring relative ${
                   isActive
@@ -80,9 +84,13 @@ export default function Navbar() {
               >
                 {item.label}
                 {isActive && (
-                  <span className="absolute bottom-0 left-3 right-3 h-0.5 bg-lime rounded-full" />
+                  <motion.span
+                    layoutId="navbar-indicator"
+                    className="absolute bottom-0 left-3 right-3 h-0.5 bg-lime rounded-full"
+                    transition={{ type: 'spring', stiffness: 380, damping: 30 }}
+                  />
                 )}
-              </a>
+              </motion.a>
             )
           })}
         </nav>
@@ -93,13 +101,15 @@ export default function Navbar() {
             <span className="w-2 h-2 rounded-full bg-lime animate-pulse" aria-hidden="true" />
             <span>Portafolio personal</span>
           </div>
-          <a
+          <motion.a
+            whileHover={{ scale: 1.03, y: -1 }}
+            whileTap={{ scale: 0.96 }}
             href="#contacto"
             className="inline-flex items-center gap-1 px-3 py-1.5 text-xs font-mono font-medium rounded-md bg-lime text-base hover:bg-lime-hover transition-colors focus-ring font-semibold"
           >
             <span>Hablemos</span>
             <ArrowUpRight className="w-3.5 h-3.5" aria-hidden="true" />
-          </a>
+          </motion.a>
         </div>
 
         {/* Mobile menu button */}

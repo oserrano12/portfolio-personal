@@ -1,5 +1,5 @@
 import { useState, useMemo } from 'react'
-import { AnimatePresence } from 'motion/react'
+import { AnimatePresence, motion } from 'motion/react'
 import { Code2, Filter } from 'lucide-react'
 import { projectsData, filterOptions } from '../data/projects'
 import type { FilterOption } from '../data/projects'
@@ -72,8 +72,10 @@ export default function ProjectsSection() {
               const count = filterCounts[option.id]
 
               return (
-                <button
+                <motion.button
                   key={option.id}
+                  whileHover={{ y: -1, scale: 1.02 }}
+                  whileTap={{ scale: 0.95 }}
                   role="tab"
                   type="button"
                   aria-selected={isSelected}
@@ -95,7 +97,7 @@ export default function ProjectsSection() {
                   >
                     {count}
                   </span>
-                </button>
+                </motion.button>
               )
             })}
           </div>

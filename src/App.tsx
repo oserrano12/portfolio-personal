@@ -5,12 +5,20 @@ import AboutSection from './components/AboutSection'
 import TechStackSection from './components/TechStackSection'
 import ContactSection from './components/ContactSection'
 import ScrollToTop from './components/ScrollToTop'
+import ScrollProgress from './components/ScrollProgress'
+import AmbientBackground from './components/AmbientBackground'
 
 const CURRENT_YEAR = new Date().getFullYear()
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-base text-text-primary font-body flex flex-col selection:bg-lime selection:text-base">
+    <div className="min-h-screen bg-base text-text-primary font-body flex flex-col selection:bg-lime selection:text-base relative">
+      {/* Top Reading Scroll Progress Bar */}
+      <ScrollProgress />
+
+      {/* Global Interactive Ambient Canvas & Cursor Glow */}
+      <AmbientBackground />
+
       {/* Accessible skip link for keyboard and screen reader users (WCAG 2.4.1) */}
       <a href="#main-content" className="skip-to-content focus-ring">
         Saltar al contenido principal
@@ -20,7 +28,7 @@ export default function App() {
       <Navbar />
 
       {/* Main Content Landmark */}
-      <main id="main-content" className="flex-1">
+      <main id="main-content" className="flex-1 relative z-10">
         <Hero />
 
         {/* Featured Projects Section */}

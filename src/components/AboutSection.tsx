@@ -46,11 +46,12 @@ export default function AboutSection() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {/* Bento Card 1: Principal - Formación & Frontend */}
           <motion.div
-            initial={{ opacity: 0, y: 15 }}
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
+            whileHover={{ y: -4, transition: { duration: 0.2 } }}
             transition={{ duration: 0.4 }}
-            className="md:col-span-2 rounded-2xl bg-surface border border-border-subtle p-7 flex flex-col justify-between hover:border-lime-border/60 transition-all duration-300 relative overflow-hidden group"
+            className="md:col-span-2 rounded-2xl bg-surface border border-border-subtle p-7 flex flex-col justify-between hover:border-lime-border/60 hover:shadow-xl hover:shadow-lime/[0.02] transition-all duration-300 relative overflow-hidden group"
           >
             <div className="absolute top-0 right-0 w-64 h-64 bg-lime/5 rounded-full blur-3xl -z-10 group-hover:bg-lime/10 transition-colors pointer-events-none" />
 
@@ -111,11 +112,12 @@ export default function AboutSection() {
 
           {/* Bento Card 2: Dominio en Hardware */}
           <motion.div
-            initial={{ opacity: 0, y: 15 }}
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.4, delay: 0.1 }}
-            className="rounded-2xl bg-surface border border-border-subtle p-7 flex flex-col justify-between hover:border-lime-border/60 transition-all duration-300 relative group"
+            whileHover={{ y: -4, transition: { duration: 0.2 } }}
+            transition={{ duration: 0.4, delay: 0.08 }}
+            className="rounded-2xl bg-surface border border-border-subtle p-7 flex flex-col justify-between hover:border-lime-border/60 hover:shadow-xl hover:shadow-lime/[0.02] transition-all duration-300 relative group"
           >
             <div>
               <div className="w-10 h-10 rounded-xl bg-lime-muted border border-lime-border flex items-center justify-center text-lime mb-5">
@@ -147,11 +149,12 @@ export default function AboutSection() {
 
           {/* Bento Card 3: Redes, Topologías & Cisco */}
           <motion.div
-            initial={{ opacity: 0, y: 15 }}
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.4, delay: 0.15 }}
-            className="rounded-2xl bg-surface border border-border-subtle p-7 flex flex-col justify-between hover:border-lime-border/60 transition-all duration-300 relative group"
+            whileHover={{ y: -4, transition: { duration: 0.2 } }}
+            transition={{ duration: 0.4, delay: 0.16 }}
+            className="rounded-2xl bg-surface border border-border-subtle p-7 flex flex-col justify-between hover:border-lime-border/60 hover:shadow-xl hover:shadow-lime/[0.02] transition-all duration-300 relative group"
           >
             <div>
               <div className="w-10 h-10 rounded-xl bg-base border border-border-subtle flex items-center justify-center text-lime mb-5">
@@ -186,11 +189,12 @@ export default function AboutSection() {
 
           {/* Bento Card 4: Bases de Datos & Backend */}
           <motion.div
-            initial={{ opacity: 0, y: 15 }}
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.4, delay: 0.2 }}
-            className="rounded-2xl bg-surface border border-border-subtle p-7 flex flex-col justify-between hover:border-lime-border/60 transition-all duration-300 relative group"
+            whileHover={{ y: -4, transition: { duration: 0.2 } }}
+            transition={{ duration: 0.4, delay: 0.24 }}
+            className="rounded-2xl bg-surface border border-border-subtle p-7 flex flex-col justify-between hover:border-lime-border/60 hover:shadow-xl hover:shadow-lime/[0.02] transition-all duration-300 relative group"
           >
             <div>
               <div className="w-10 h-10 rounded-xl bg-base border border-border-subtle flex items-center justify-center text-lime mb-5">
@@ -223,11 +227,12 @@ export default function AboutSection() {
 
           {/* Bento Card 5: Creatividad & Pasiones */}
           <motion.div
-            initial={{ opacity: 0, y: 15 }}
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.4, delay: 0.25 }}
-            className="rounded-2xl bg-surface border border-border-subtle p-7 flex flex-col justify-between hover:border-lime-border/60 transition-all duration-300 relative group"
+            whileHover={{ y: -4, transition: { duration: 0.2 } }}
+            transition={{ duration: 0.4, delay: 0.32 }}
+            className="rounded-2xl bg-surface border border-border-subtle p-7 flex flex-col justify-between hover:border-lime-border/60 hover:shadow-xl hover:shadow-lime/[0.02] transition-all duration-300 relative group"
           >
             <div>
               <div className="w-10 h-10 rounded-xl bg-base border border-border-subtle flex items-center justify-center text-lime mb-5">

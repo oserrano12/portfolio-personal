@@ -211,8 +211,10 @@ export default function TechStackSection() {
             const Icon = tab.icon
 
             return (
-              <button
+              <motion.button
                 key={tab.id}
+                whileHover={{ y: -1, scale: 1.02 }}
+                whileTap={{ scale: 0.95 }}
                 role="tab"
                 type="button"
                 aria-selected={isSelected}
@@ -226,7 +228,7 @@ export default function TechStackSection() {
               >
                 <Icon className={`w-3.5 h-3.5 ${isSelected ? 'text-base' : 'text-lime'}`} />
                 <span>{tab.label}</span>
-              </button>
+              </motion.button>
             )
           })}
         </div>
@@ -238,15 +240,16 @@ export default function TechStackSection() {
           aria-labelledby={`tab-${activeCategory}`}
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5"
         >
-          {filteredSkills.map((skill) => (
+          {filteredSkills.map((skill, index) => (
             <motion.div
               key={skill.name}
               layout
               initial={{ opacity: 0, scale: 0.96 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.96 }}
-              transition={{ duration: 0.25 }}
-              className="rounded-2xl bg-surface border border-border-subtle p-5 flex flex-col justify-between hover:border-lime-border/60 hover:shadow-lg hover:shadow-lime/[0.02] transition-all duration-200 group"
+              whileHover={{ y: -4, scale: 1.01 }}
+              transition={{ duration: 0.25, delay: index * 0.02 }}
+              className="rounded-2xl bg-surface border border-border-subtle p-5 flex flex-col justify-between hover:border-lime-border/60 hover:shadow-xl hover:shadow-lime/[0.03] transition-all duration-200 group"
             >
               <div>
                 <div className="flex items-center justify-between gap-2 mb-3">
