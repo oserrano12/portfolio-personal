@@ -48,3 +48,7 @@ desktop.ini
 *.tsbuildinfo
 tmp/
 temp/
+__pycache__/
+*.py[cod]
+*$py.class
+
